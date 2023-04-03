@@ -1,0 +1,15 @@
+@use 'styles/mixins';
+
+.category-list {
+  &__items {
+    @include mixins.flex('center', 'flex-start');
+
+    box-sizing: border-box;
+    overflow-x: auto;
+    padding-top: 0.25rem;
+    padding-bottom: 0.5rem;
+
+    padding-right: 0.75rem;
+    margin-left: 0.75rem;
+  }
+}

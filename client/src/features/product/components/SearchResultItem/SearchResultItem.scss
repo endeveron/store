@@ -1,0 +1,28 @@
+@use 'styles/mixins';
+
+.search-result-item {
+  @include mixins.flex-row();
+  cursor: pointer;
+
+  & + & {
+    margin-top: 0.75rem;
+  }
+
+  &__image {
+    display: flex;
+    height: 3rem;
+    width: 3rem;
+    min-width: 3rem;
+    margin-right: 0.875rem;
+
+    img {
+      margin: auto;
+      max-height: 100%;
+    }
+  }
+
+  &__title {
+    color: var(--c-neutral-a);
+    line-height: 1.25;
+  }
+}

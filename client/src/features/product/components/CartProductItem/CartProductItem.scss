@@ -1,0 +1,126 @@
+@use 'styles/mixins';
+
+.cart-item {
+  @include mixins.shadow();
+
+  display: flex;
+  box-sizing: border-box;
+  padding: 0.75rem 0.75rem 0.75rem 0.5rem;
+  border-radius: var(--s-border-radius-m);
+  background-color: var(--c-bg-inverse);
+  animation: fade 0.25s ease-out;
+
+  & + & {
+    margin-top: 0.5rem;
+  }
+
+  &__image {
+    box-sizing: border-box;
+    display: flex;
+
+    width: 4rem;
+    min-width: 4rem;
+    height: 3.25rem;
+    max-height: 3.25rem;
+    // padding-top: 0.25rem;
+
+    img {
+      margin: auto;
+      max-height: 100%;
+      max-width: 3.5rem;
+    }
+  }
+
+  &__content {
+    @include mixins.flex-col();
+    justify-content: space-between;
+    align-items: stretch;
+
+    flex: 1;
+    box-sizing: border-box;
+    padding-left: 0.75rem;
+
+    &-row {
+      display: flex;
+
+      &:nth-child(1) {
+        justify-content: space-between;
+      }
+
+      // &:nth-child(2) {
+      //   // justify-content: flex-end;
+      // }
+
+      &:nth-child(3) {
+        justify-content: flex-end;
+        margin-top: -0.375rem;
+      }
+    }
+  }
+
+  &__title,
+  &__color {
+    font-size: 0.875rem;
+  }
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__color {
+    color: var(--c-neutral-a);
+    transform: translateY(0.125rem);
+  }
+
+  &__remove.icon--action {
+    opacity: 0.3;
+    padding-left: 0.5rem;
+    transform: translate(0.125rem, -0.0625rem);
+  }
+
+  &__quantity {
+    @include mixins.flex-row();
+
+    & > * {
+      display: flex;
+
+      &.disabled .icon--action {
+        &,
+        &:hover {
+          cursor: default;
+          opacity: 0.15;
+        }
+      }
+    }
+
+    &-value {
+      width: 2rem;
+      justify-content: center;
+      font-weight: 600;
+    }
+  }
+
+  &__price {
+    @include mixins.flex('center', 'flex-end');
+    width: 4.5rem;
+
+    &-value {
+      font-weight: 600;
+      padding-left: 0.125rem;
+    }
+  }
+
+  &__currency {
+    font-size: 0.875rem;
+    color: var(--c-neutral-a);
+  }
+
+  span.action {
+    font-size: 1.25rem;
+    color: var(--c-neutral-c);
+  }
+
+  .open-details {
+    cursor: pointer;
+  }
+}

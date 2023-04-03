@@ -1,0 +1,17 @@
+@use 'styles/mixins';
+
+.cart {
+  box-sizing: border-box;
+
+  &__content.view-content {
+    padding-top: 1.5rem;
+    background-color: var(--c-bg-paper);
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+}

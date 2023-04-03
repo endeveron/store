@@ -1,0 +1,78 @@
+@use 'styles/mixins';
+
+%form-label-transform {
+  transform: translateY(0.125rem);
+}
+
+.search-form {
+  @include mixins.flex-row();
+
+  box-sizing: border-box;
+  flex-grow: 1;
+
+  padding-top: 0.125rem;
+  // border-radius: 2rem;
+  // background-color: rgba(255, 255, 255, 0.057);
+
+  &__icon {
+    @include mixins.flex-center();
+    height: 1.25rem;
+    width: 2.125rem;
+    padding-left: 0.125rem;
+
+    &--search {
+      opacity: 0.4;
+    }
+  }
+
+  &__clear {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &--active {
+      cursor: pointer;
+      opacity: 0.4;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__field {
+    flex-grow: 1;
+
+    // Hide border
+    .MuiOutlinedInput-notchedOutline {
+      border: 0;
+    }
+
+    // Input
+    .MuiInputBase-input.MuiOutlinedInput-input {
+      padding: 0;
+      font-weight: 500;
+      font-size: 1.25rem;
+      line-height: 1;
+      color: var(--c-text-inverse);
+      transform: translateY(-0.125rem);
+    }
+
+    // Label
+    .MuiInputLabel-outlined.MuiInputLabel-shrink,
+    .MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-outlined.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-outlined {
+      @extend %form-label-transform;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .MuiFormLabel-root {
+      transition: transform 0.2s ease, opacity 0.25s ease;
+      &.Mui-focused,
+      &.MuiFormLabel-filled {
+        @extend %form-label-transform;
+        opacity: 0;
+      }
+    }
+  }
+}

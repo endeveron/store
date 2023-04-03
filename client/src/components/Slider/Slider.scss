@@ -1,0 +1,42 @@
+@use 'styles/mixins';
+
+.slider {
+  @include mixins.flex-col('center', 'space-between');
+
+  $self: &;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+
+  &__nav {
+    display: flex;
+    padding-top: 1rem;
+
+    &-item {
+      box-sizing: border-box;
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 0.5rem;
+      border-radius: 50%;
+      opacity: 0.5;
+      cursor: pointer;
+      background-color: var(--c-bg-opac);
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      & + & {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  &__image {
+    animation: fade 0.25s ease-in-out;
+
+    max-width: 100%;
+    margin: auto;
+  }
+}

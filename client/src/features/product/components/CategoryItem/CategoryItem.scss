@@ -1,0 +1,22 @@
+@use 'styles/mixins';
+
+.category-item {
+  cursor: pointer;
+  padding: 0.75rem 1.25rem;
+  border-radius: 2rem;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  letter-spacing: 0.03125rem;
+  opacity: 0.6;
+  color: var(--c-text-inverse);
+  background-color: var(--c-bg-paper-opac);
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  & + & {
+    margin-left: 0.5rem;
+  }
+}

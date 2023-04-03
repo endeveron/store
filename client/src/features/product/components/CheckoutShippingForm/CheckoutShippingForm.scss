@@ -1,0 +1,16 @@
+.checkout-shipping-form {
+  &__fields {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &__action {
+    text-align: center;
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &__icon {
+    opacity: 0.2;
+  }
+}

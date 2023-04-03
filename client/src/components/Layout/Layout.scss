@@ -1,0 +1,31 @@
+@use 'styles/mixins';
+@use 'styles/breakpoints';
+
+$container-min-width: 20rem; // 320px
+$container-max-width: 87.5rem; // 1400px
+
+.layout {
+  @include mixins.full-height-child();
+  height: 100vh;
+
+  & > main {
+    @include mixins.full-height-child();
+
+    box-sizing: border-box;
+    min-width: $container-min-width;
+    max-width: $container-max-width;
+
+    @include breakpoints.sm {
+      margin: 0 auto;
+      min-width: var(--br-sm);
+    }
+
+    @include breakpoints.md {
+      // min-width: var(--br-md);
+    }
+
+    & > * {
+      @include mixins.full-height-child();
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.logo {
+  display: flex;
+  align-items: center;
+
+  &_title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1;
+    margin-left: 0.5rem;
+  }
+}

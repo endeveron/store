@@ -1,0 +1,27 @@
+@use 'styles/mixins';
+
+.auth {
+  @include mixins.flex-col-center;
+  height: 100vh;
+  box-sizing: border-box;
+  letter-spacing: 0.03125rem;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__greeting-message,
+  &__link-wrapper {
+    color: var(--c-neutral-a);
+  }
+
+  &__greeting-message {
+    padding-top: 0.75rem;
+  }
+
+  &__link-wrapper {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}

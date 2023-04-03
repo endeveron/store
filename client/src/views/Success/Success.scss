@@ -1,0 +1,13 @@
+@use 'styles/mixins';
+
+.success {
+  &__content.view-content {
+    @include mixins.flex-col-center;
+  }
+
+  &__message,
+  &__actions {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}

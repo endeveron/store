@@ -1,0 +1,58 @@
+%flex {
+  display: flex;
+}
+
+%flex-col {
+  @extend %flex;
+  flex-direction: column;
+}
+
+%centered {
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex($align-items: flex-start, $justify-content: flex-start) {
+  @extend %flex;
+  align-items: #{$align-items};
+  justify-content: #{$justify-content};
+}
+
+@mixin flex-col($align-items: flex-start, $justify-content: flex-start) {
+  @extend %flex-col;
+  align-items: #{$align-items};
+  justify-content: #{$justify-content};
+}
+
+@mixin flex-row {
+  @extend %flex;
+  align-items: center;
+}
+
+@mixin flex-center {
+  @extend %flex;
+  @extend %centered;
+}
+
+@mixin flex-col-center {
+  @extend %flex-col;
+  @extend %centered;
+}
+
+@mixin full-height-child {
+  @extend %flex-col;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+@mixin shadow {
+  box-shadow: 0 0.25rem 1rem 0 rgba(0, 0, 0, 0.05);
+}
+
+/* solves sticky problem */
+@mixin hover {
+  @media (hover: hover) {
+    @content;
+  }
+}

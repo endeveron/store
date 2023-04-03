@@ -1,0 +1,14 @@
+.product-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  &__list-wrapper.view-content {
+    margin-top: 1rem;
+    padding: 0;
+  }
+
+  &__loading {
+    padding-top: 2rem;
+  }
+}

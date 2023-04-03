@@ -1,0 +1,9 @@
+.search-result {
+  padding: 1rem 0.375rem;
+
+  &__message {
+    color: var(--c-neutral-b);
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+}

@@ -1,0 +1,18 @@
+.view-header {
+  box-sizing: border-box;
+  display: flex;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  color: var(--c-text-inverse);
+
+  .nav-back {
+    margin-left: 0.5rem;
+    transform: translateY(0.2rem);
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+}

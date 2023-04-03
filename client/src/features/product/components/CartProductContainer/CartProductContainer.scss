@@ -1,0 +1,36 @@
+@use 'styles/mixins';
+
+.cart-product-container {
+  &__no-items {
+    @include mixins.flex-col-center();
+  }
+
+  &__message {
+    color: var(--c-neutral-b);
+    padding-top: 1.25rem;
+    padding-bottom: 2.25rem;
+  }
+
+  &__summary {
+    display: flex;
+    align-items: baseline;
+    margin-top: 1.5rem;
+    margin-right: 0.75rem;
+    margin-left: 5.25rem;
+
+    &-title {
+      flex: 1;
+    }
+
+    &-title,
+    &-currency {
+      color: var(--c-neutral-b);
+    }
+
+    &-value {
+      font-weight: 600;
+      font-size: 1.25rem;
+      padding-left: 0.125rem;
+    }
+  }
+}

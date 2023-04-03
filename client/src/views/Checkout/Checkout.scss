@@ -1,0 +1,119 @@
+@use 'styles/mixins';
+@use 'styles/sizes';
+
+%box-bg {
+  background-color: var(--c-bg-inverse);
+}
+
+.checkout {
+  $self: &;
+
+  &__content.view-content {
+    padding-top: 1.5rem;
+    // padding-bottom: 1.5rem;
+    background-color: var(--c-bg-paper);
+  }
+
+  &__row {
+    display: flex;
+
+    & + & {
+      margin-top: 0.5rem;
+    }
+  }
+
+  &__content-box {
+    & + & {
+      margin-top: 2rem;
+    }
+
+    &__content {
+      @include mixins.shadow();
+      @extend %box-bg;
+      padding: 1rem;
+      border-radius: var(--s-border-radius-m);
+    }
+  }
+
+  &__subtitle {
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--c-neutral-c);
+  }
+
+  &__prop {
+    &-title {
+      width: 4.125rem;
+      font-size: 0.875rem;
+      color: var(--c-neutral-b);
+    }
+
+    &-value {
+      font-weight: 600;
+    }
+  }
+
+  &__currency {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--c-neutral-a);
+    margin-right: 0.125rem;
+  }
+
+  &__summary {
+    margin-top: 2.5rem;
+
+    #{$self}__row {
+      justify-content: space-between;
+
+      &:last-child {
+        align-items: baseline;
+        border-top: 0.06125rem solid var(--c-border);
+        margin-top: 1.5rem;
+        padding-top: 1.25rem;
+
+        #{$self}__prop {
+          &-title {
+            color: var(--c-text-main);
+            font-weight: 600;
+          }
+
+          &-value {
+            font-size: 1.25rem;
+          }
+        }
+
+        #{$self}__currency {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    &__content {
+      @include mixins.shadow();
+      @extend %box-bg;
+      margin-right: -0.75rem;
+      margin-left: -0.75rem;
+      padding: 1.75rem 1.675rem 3rem;
+      // border-top: 0.125rem solid var(--c-border);
+    }
+
+    &__action {
+      text-align: center;
+      padding-top: 1.5rem;
+      padding-bottom: 0.5rem;
+
+      button {
+        min-width: 10rem;
+      }
+    }
+  }
+
+  &__loading {
+    @include mixins.flex-col-center;
+    height: 3rem;
+  }
+}

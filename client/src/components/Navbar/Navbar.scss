@@ -1,0 +1,56 @@
+@use 'styles/mixins';
+
+$navbar-height: 4rem;
+
+.navbar {
+  @include mixins.flex-center;
+
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  padding: 0.5rem;
+  height: $navbar-height;
+  min-height: $navbar-height;
+  color: var(--c-text-inverse);
+  background-color: var(--c-bg-default);
+  z-index: 3;
+
+  &__icon {
+    &--cart {
+      margin-left: 1rem;
+      transform: translateY(-0.06125rem);
+
+      &-marker {
+        opacity: 1 !important;
+        position: relative;
+
+        &:before {
+          position: absolute;
+          content: '';
+          top: -0.125rem;
+          right: 0;
+          width: 0.5rem;
+          height: 0.5rem;
+          border: 0.125rem solid var(--c-bg-default);
+          border-radius: 50%;
+          background-color: var(--c-bg-accent);
+        }
+      }
+    }
+  }
+
+  &__main {
+    @include mixins.flex-center;
+    flex: 1;
+  }
+
+  &__logo-wrapper.translate {
+    &-left {
+      transform: translate(-0.5rem);
+    }
+
+    &-right {
+      transform: translate(1.5rem);
+    }
+  }
+}
